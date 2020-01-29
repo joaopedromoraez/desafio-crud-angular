@@ -8,6 +8,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ListaComponent } from './components/listagem/lista/lista.component';
 import { PaginationComponent } from './components/listagem/pagination/pagination.component';
 import { BuscaComponent } from './components/listagem/busca/busca.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BuscaComponent } from './components/listagem/busca/busca.component';
     CadastroComponent,
     ListaComponent,
     PaginationComponent,
-    BuscaComponent
+    BuscaComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
