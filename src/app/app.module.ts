@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { ListagemComponent } from './components/listagem/listagem.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ListaComponent } from './components/listagem/lista/lista.component';
-import { PaginationComponent } from './components/listagem/pagination/pagination.component';
 import { BuscaComponent } from './components/listagem/busca/busca.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ApiService } from './services/api.service';
@@ -19,7 +18,6 @@ import { ApiService } from './services/api.service';
     ListagemComponent,
     CadastroComponent,
     ListaComponent,
-    PaginationComponent,
     BuscaComponent,
     NavbarComponent
   ],
