@@ -1,1 +1,53 @@
-<p>lista works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Ações</th>
+            <!-- <th scope="col">idade</th> -->
+            <!-- <th scope="col">status</th> -->
+            <!-- <th scope="col">login</th> -->
+            <!-- <th scope="col">senha</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios">
+            <th>{{ usuario.id }}</th>
+            <th>{{ usuario.name }}</th>
+            <!-- <th>{{ usuario.mail }}</th> -->
+            <!-- <th>{{ usuario.age }}</th> -->
+            <!-- <th>{{ usuario.status }}</th> -->
+            <!-- <th>{{ usuario.login }}</th> -->
+            <!-- <th>{{ usuario.password }}</th> -->
+
+            <!-- Button trigger modal -->
+            <th>
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                    [attr.data-target]="'#modal'+ usuario.id">Informações
+                </button>
+            </th>
+            <!-- Modal -->
+            <div class="modal fade" id="modal{{ usuario.id }}" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Informações</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>ID: </strong>{{ usuario.id }}</p>
+                            <p><strong>Nome: </strong>{{ usuario.name }}</p>
+                            <p><strong>E-mail: </strong>{{ usuario.mail }}</p>
+                            <p><strong>Idade: </strong>{{ usuario.age }}</p>
+                            <p><strong>Status: </strong>{{ usuario.status }}</p>
+                            <p><strong>Login: </strong>{{ usuario.login }}</p>
+                            <p><strong>Senha: </strong>{{ usuario.password }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tr>
+</table>
