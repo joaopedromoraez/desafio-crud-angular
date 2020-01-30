@@ -1,25 +1,29 @@
 <div class="container">
+
+    <div *ngIf="usuarioForm.invalid" class="alert alert-danger">
+        Preencha todos os campos corretamente!
+    </div>
+    
     <div class="card">
         <div class="card-body">
             <div class="row">
                 <div class="col">
-
-                    <form>
+                    <form #usuarioForm="ngForm" (ngSubmit)="cadastrarUsuario(usuarioForm.value)">
                         <div class="form-group">
                             <label for="inputAddress">Nome</label>
-                            <input type="text" class="form-control" id="name" placeholder="João Pedro Moraes">
+                            <input type="text" class="form-control" id="name" placeholder="João Pedro Moraes" name="name" ngModel required #nome="ngModel">
+                            <div *ngIf="nome.invalid">Informe um nome</div>
                         </div>
 
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4"
-                                    placeholder="ex: joao.moraes@outlook.com">
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="ex: joao.moraes@outlook.com" name="email" ngModel required email>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Senha</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Senha" name="password" ngModel required>
                             </div>
                         </div>
 
@@ -27,22 +31,21 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputAddress">login</label>
-                                <input type="text" class="form-control" id="login" placeholder="ex: João Pedro Moraes">
+                                <input type="text" class="form-control" id="login" placeholder="ex: João Pedro Moraes" name="login" ngModel required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputAddress">Idade</label>
-                                <input type="number" class="form-control" id="age" placeholder="ex: 26">
+                                <input type="number" class="form-control" id="age" placeholder="ex: 26" name="age" ngModel required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputAddress">Status</label>
-                                <select class="custom-select mr-sm-2" id="status">
-                                    <!-- <option selected>Choose...</option> -->
-                                    <option value="ativo">Ativo</option>
-                                    <option value="inativo">Inativo</option>
+                                <select class="custom-select mr-sm-2" id="status" name="status" ngModel required>
+                                    <option value="true">Ativo</option>
+                                    <option value="false">Inativo</option>
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">CADASTRAR</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.valid">CADASTRAR</button>
                     </form>
 
                 </div>
