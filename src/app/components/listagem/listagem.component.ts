@@ -8,9 +8,9 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ListagemComponent implements OnInit {
 
-  usuariosPaginado = [];
-  usuariosTotal = [];
-  usuariosBusca = [];
+  usuariosPaginado: any;
+  usuariosTotal: any;
+  usuariosBusca: any;
   paginasTotais: number;
   paginaAtual: number = 1;
   itensPagina: number = 10;
@@ -22,15 +22,28 @@ export class ListagemComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.listar()
-      .then(response => {
+      .subscribe(response => {
         this.usuariosTotal = response;
         this.usuariosBusca = response;
-        this.usuariosPaginado = response.slice(0, this.itensPagina);
-        this.paginasTotais = Math.ceil(response.length / this.itensPagina);
+        this.usuariosPaginado = this.usuariosTotal.slice(0, this.itensPagina);
+        this.paginasTotais = Math.ceil(this.usuariosTotal.length / this.itensPagina);
         for (let x = 0; x < this.paginasTotais; x++) {
           this.pagination.push(x + 1);
         }
-      })
+      },
+      error => {
+        switch (error.status) {
+          case 401: alert(`${error.status}: ${error.error}`); break;
+          case 402: alert(`${error.status}: ${error.error}`); break;
+          case 403: alert(`${error.status}: ${error.error}`); break;
+          case 404: alert(`${error.status}: ${error.error}`); break;
+          case 406: alert(`${error.status}: ${error.error}`); break;
+          case 422: alert(`${error.status}: ${error.error}`); break;
+          case 429: alert(`${error.status}: ${error.error}`); break;
+          case 400: alert(`${error.status}: ${error.error}`); break;
+          case 500: alert(`${error.status}: ${error.error}`); break;
+        }
+      });
   }
 
   proximaPagina() {
