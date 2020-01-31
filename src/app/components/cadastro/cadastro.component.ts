@@ -9,6 +9,13 @@ import { NgForm } from '@angular/forms';
 })
 export class CadastroComponent implements OnInit {
 
+  name: string;
+  mail: string;
+  password: string;
+  login: string;
+  age: number;
+  status: boolean = true;
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -17,11 +24,11 @@ export class CadastroComponent implements OnInit {
   cadastrarUsuario(form: NgForm) {
     this.apiService.cadastrar(form)
     alert('Usuario cadastrado')
-    form.reset();
-  }
-
-  salvar(form: NgForm){
-    console.log(form);
+    this.name = "";
+    this.mail = "";
+    this.password = "";
+    this.login = "";
+    this.age = null;
   }
 
 }
