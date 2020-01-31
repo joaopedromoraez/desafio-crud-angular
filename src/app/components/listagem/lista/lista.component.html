@@ -1,24 +1,18 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">Id</th>
             <th scope="col">Nome</th>
             <th scope="col">Status</th>
-            <!-- <th scope="col">idade</th> -->
             <th scope="col">Ações</th>
-            <!-- <th scope="col">login</th> -->
-            <!-- <th scope="col">senha</th> -->
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let usuario of usuarios">
             <th>{{ usuario.id }}</th>
-            <th>{{ usuario.name }}</th>
-            <!-- <th>{{ usuario.mail }}</th> -->
-            <!-- <th>{{ usuario.age }}</th> -->
-            <th>{{ usuario.status }}</th>
-            <!-- <th>{{ usuario.login }}</th> -->
-            <!-- <th>{{ usuario.password }}</th> -->
+            <td>{{ usuario.name }}</td>
+            <td>{{ (usuario.status ? "Ativo" : "Inativo") }}</td>
+
 
             <!-- Button trigger modal -->
             <th>
@@ -38,13 +32,38 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p><strong>ID: </strong>{{ usuario.id }}</p>
+                            <!-- <p><strong>ID: </strong>{{ usuario.id }}</p>
                             <p><strong>Nome: </strong>{{ usuario.name }}</p>
                             <p><strong>E-mail: </strong>{{ usuario.mail }}</p>
                             <p><strong>Idade: </strong>{{ usuario.age }}</p>
-                            <p><strong>Status: </strong>{{ usuario.status }}</p>
+                            <p><strong>Status: </strong>{{ (usuario.status ? "Ativo" : "Inativo") }}</p>
                             <p><strong>Login: </strong>{{ usuario.login }}</p>
-                            <p><strong>Senha: </strong>{{ usuario.password }}</p>
+                            <p><strong>Senha: </strong>{{ usuario.password }}</p> -->
+                            <table class="table table-bordered">
+                                <tbody>
+                                  <tr>
+                                    <th>Id</th><td>{{ usuario.id }}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Nome</th><td>{{ usuario.name }}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>E-mail</th><td>{{ usuario.mail }}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Idade</th><td>{{ usuario.age }} anos</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Status</th><td>{{ (usuario.status ? "Ativo" : "Inativo") }}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Login</th><td>{{ usuario.login }}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Senha</th><td>{{ usuario.password }}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
                         </div>
                     </div>
                 </div>
