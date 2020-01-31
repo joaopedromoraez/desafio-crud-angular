@@ -2,7 +2,8 @@
 
 Este projeto foi criado com o [Angular CLI](https://github.com/angular/angular-cli) versão 8.3.23.
 
-Você pode acessar ele pelo [Github Pages](https://joaopedromoraes.github.io/desafio-crud-angular/). Ele usa uma API de mockup, esta API esta hospedada no [Mockapi.io](https://www.mockapi.io/).
+<!-- Você pode acessar ele pelo [Github Pages](https://joaopedromoraes.github.io/desafio-crud-angular/).  -->
+Ele usa uma API de mockup, esta API esta hospedada no [Mockapi.io](https://www.mockapi.io/).
 
 ## Escopo
 
