@@ -1,27 +1,40 @@
 # DesafioWebAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+Este projeto foi criado com o [Angular CLI](https://github.com/angular/angular-cli) versão 8.3.23.
 
-## Development server
+Você pode acessar ele pelo [Github Pages](https://joaopedromoraes.github.io/desafio-crud-angular/). Ele usa uma API de mockup, esta API esta hospedada no [Mockapi.io](https://www.mockapi.io/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Escopo
 
-## Code scaffolding
+Criar um projeto Angular 8, utilizando a abordagem SPA com as seguintes funcionalidades:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Construir a estrutura do projeto utilizando o npm (gerenciador de pacotes do Node.js);
+- Criar uma pagina de cadastro de Pessoa com os seguintes campos: ID, Nome, Email, Idade, Login, Senha e Status (ativo/inativo);
+- Criar uma listagem dos usuários cadastrados, através de uma GRID;
+- Criar a rota linkando uma página a outra (Adicionar Pessoa e Listar Pessoa);
+- Implementar o consumo da API disponibilizadas, através dos dois endpoints:
+	- API de Listagem
+	- API de Cadastro
+- Criar um design básico para páginas (pode ser utilizado o bibliotecas/frameworks como bootstrap ou material-UI design disponíveis no repositório do npm)
+- Utilizar versões mais novas e estável das tecnologias!
 
-## Build
+## Tecnologias Usadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Angular CLI 8.3.23.
+- Bootstrap 4.4.1.
 
-## Running unit tests
+## Como instalar
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Baixe ou clone este repositório usando `git clone https://github.com/JoaoPedroMoraes/desafio-crud-angular.git`;
+- Dentro do diretório, instale as dependências usando `npm install`.
 
-## Running end-to-end tests
+## Como executar
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Execute `ng serve` para executar a versão de desenvolvimento. Depois acesse `http://localhost:4200/`.
 
-## Further help
+## Como compilar/construir
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Execute `ng build` para buildar o projeto. Para buildar a versão de produção adicione a flag `--prod`. Os arquivos serão armazenados do diretório `dist`.
+
+## Dúvidas
+Caso há alguma dúvida em relação a este repositório, envie para joaopedromoraes@outlook.com.
