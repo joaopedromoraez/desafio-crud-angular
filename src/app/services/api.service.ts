@@ -16,15 +16,13 @@ export class ApiService {
     return this.http.get(this.api);
   }
 
-//   listar(): Promise<any> {
-//     return this.http.get(this.api)
-//                     .then(response => response
-//                     .catch(err => Observable.throw(err.message));
-//  } 
-
-  cadastrar(usuario: any): Promise<any> {
-    return this.http.post(this.api, usuario)
-    .toPromise()
-    .then(response => response);
+  cadastrar(usuario: any) {
+    return this.http.post(this.api, usuario);
   }
+
+  // cadastrar(usuario: any): Promise<any> {
+  //   return this.http.post(this.api, usuario)
+  //   .toPromise()
+  //   .then(response => response);
+  // }
 }
