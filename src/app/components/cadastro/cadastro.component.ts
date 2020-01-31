@@ -25,7 +25,7 @@ export class CadastroComponent implements OnInit {
     this.apiService.cadastrar(form)
       .subscribe(response => {
         console.log(response);
-        alert(`O usuario ${response.name} foi cadastrado com sucesso!`)
+        alert(`O usuario ${response['name']} foi cadastrado com sucesso!`)
         this.name = "";
         this.mail = "";
         this.password = "";
